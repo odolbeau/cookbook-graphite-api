@@ -26,6 +26,14 @@ package 'graphite-api' do
 end
 
 service 'graphite-api' do
-  action [:enable, :start]
+  action :nothing
   supports start: true, stop: true, status: true, restart: true, reload: true
+end
+
+template '/etc/graphite-api.yaml' do
+  source 'graphite-api.yaml.erb'
+  mode 0644
+  owner 'root'
+  group 'root'
+  notifies :restart, 'service[graphite-api]', :delayed
 end

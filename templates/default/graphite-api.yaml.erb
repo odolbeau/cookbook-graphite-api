@@ -1,0 +1,24 @@
+search_index: <%= @node['graphite_api']['search_index'] %>
+time_zone: <%= @node['graphite_api']['time_zone'] %>
+
+finders:
+  <% @node['graphite_api']['finders'].each do |finder| -%>
+  - <%= finder %>
+  <% end -%>
+
+functions:
+  <% @node['graphite_api']['functions'].each do |function| -%>
+  - <%= function %>
+  <% end -%>
+
+<% if @node['graphite_api']['whisper']['enabled'] == true -%>
+whisper:
+  directories:
+    <% @node['graphite_api']['whisper']['directories'].each do |directory| -%>
+    - <%= directory %>
+    <% end -%>
+<% end -%>
+
+#whisper:
+#  directories:
+#    - /srv/graphite/whisper
