@@ -1,4 +1,4 @@
-# Chef cookbook for grpahite-api
+# Chef cookbook for graphite-api
 
 [![Build Status](https://travis-ci.org/odolbeau/cookbook-graphite-api.png)](https://travis-ci.org/odolbeau/cookbook-graphite-api)
 
@@ -13,10 +13,10 @@ to Graphite-web.
 * Debian
 * Ubuntu
 
-**Notes**: This cookbook has been tested on Debian 7.2. It may work on other
-platforms with or without modification. Please [report
-issues](https://github.com/odolbeau/cookbook-graphite-api/issues) any additional
-platforms so they can be added.
+**Notes**: This cookbook has been tested on Debian 7.2 and Ubuntu 14.04. It may
+work on other platforms with or without modification. Please [report
+issues](https://github.com/odolbeau/cookbook-graphite-api/issues) any
+additional platforms so they can be added.
 
 ## Usage
 
