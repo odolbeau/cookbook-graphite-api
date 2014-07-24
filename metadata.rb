@@ -10,3 +10,5 @@ recipe 'graphite-api', 'Installs graphite-api.'
 
 supports 'debian'
 supports 'ubuntu'
+
+depends 'packagecloud'

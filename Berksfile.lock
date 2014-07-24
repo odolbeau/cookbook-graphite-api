@@ -1,10 +1,11 @@
 DEPENDENCIES
-  golang
-  statsdaemon
+  graphite-api
     path: .
     metadata: true
 
 GRAPH
-  golang (1.4.0)
-  statsdaemon (1.0.0)
-    golang (>= 0.0.0)
+  apt (2.4.0)
+  graphite-api (1.0.0)
+    packagecloud (>= 0.0.0)
+  packagecloud (0.0.6)
+    apt (>= 0.0.0)

@@ -1,6 +1,6 @@
 # Chef cookbook for grpahite-api
 
-[![Build Status](https://travis-ci.org/odolbeau/cookbook-statsdaemon.png)](https://travis-ci.org/odolbeau/cookbook-statsdaemon)
+[![Build Status](https://travis-ci.org/odolbeau/cookbook-graphite-api.png)](https://travis-ci.org/odolbeau/cookbook-graphite-api)
 
 ## Description
 

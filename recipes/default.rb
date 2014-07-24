@@ -17,28 +17,15 @@
 # under the License.
 #
 
-include_recipe 'golang'
-include_recipe 'golang::packages'
+packagecloud_repo 'exoscale/community' do
+  type 'deb'
+end
 
-golang_package 'github.com/bitly/statsdaemon' do
+package 'graphite-api' do
   action :install
 end
 
-template '/etc/init.d/statsdaemon' do
-  source 'statsdaemon_init.erb'
-  mode 0755
-  owner 'root'
-  group 'root'
-end
-
-file '/var/log/statsdaemon.log' do
-  owner node['go']['owner']
-  group node['go']['group']
-  mode '0644'
-  action :create_if_missing
-end
-
-service 'statsdaemon' do
+service 'graphite-api' do
   action [:enable, :start]
-  supports start: true, stop: true, restart: true
+  supports start: true, stop: true, status: true, restart: true, reload: true
 end
