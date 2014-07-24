@@ -1,0 +1,10 @@
+DEPENDENCIES
+  golang
+  statsdaemon
+    path: .
+    metadata: true
+
+GRAPH
+  golang (1.4.0)
+  statsdaemon (1.0.0)
+    golang (>= 0.0.0)
