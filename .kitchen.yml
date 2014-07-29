@@ -10,6 +10,15 @@ platforms:
   - name: ubuntu-14.04
 
 suites:
-  - name: default
+  - name: graphite_with_package_install
     run_list:
-        - recipe[graphite-api]
+      - recipe[graphite-api]
+    attributes:
+      graphite_api:
+        install_method: 'package'
+  - name: graphite_with_pip_install
+    run_list:
+      - recipe[graphite-api]
+    attributes:
+      graphite_api:
+        install_method: 'pip'
