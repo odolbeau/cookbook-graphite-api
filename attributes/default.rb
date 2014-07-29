@@ -8,8 +8,18 @@ default['graphite_api']['finders'] = []
 
 # Whisper config
 default['graphite_api']['whisper']['enabled'] = true
-
-if node['graphite_api']['whisper']['enabled']
+if node['graphite_api']['whisper']['enabled'] == true
   default['graphite_api']['finders'] |= ['graphite_api.finders.whisper.WhisperFinder']
   default['graphite_api']['whisper']['directories'] = ['/srv/graphite/whisper']
+end
+
+# InfluxDB config
+default['graphite_api']['influxdb']['enabled'] = false
+if node['graphite_api']['influxdb']['enabled'] == true
+  default['graphite_api']['finders'] |= ['graphite_influxdb.InfluxdbFinder']
+  default['graphite_api']['influxdb']['host'] = '127.0.0.1'
+  default['graphite_api']['influxdb']['port'] = 8086
+  default['graphite_api']['influxdb']['user'] = 'graphite'
+  default['graphite_api']['influxdb']['pass'] = 'graphite'
+  default['graphite_api']['influxdb']['db'] = 'graphite'
 end

@@ -26,6 +26,11 @@ rescue Chef::Exceptions::RecipeNotFound
     'to encounter this error, please fill an issue.'
 end
 
+if node['graphite_api']['influxdb']['enabled'] == true
+  include_recipe 'python'
+  python_pip 'graphite_influxdb'
+end
+
 template '/etc/graphite-api.yaml' do
   source 'graphite-api.yaml.erb'
   mode 0644

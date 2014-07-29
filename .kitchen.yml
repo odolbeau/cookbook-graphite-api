@@ -10,15 +10,28 @@ platforms:
   - name: ubuntu-14.04
 
 suites:
-  - name: graphite_with_package_install
+  #- name: graphite_with_package_install
+    #run_list:
+      #- recipe[graphite-api]
+    #attributes:
+      #graphite_api:
+        #install_method: 'package'
+
+  #- name: graphite_with_pip_install
+    #run_list:
+      #- recipe[graphite-api]
+    #attributes:
+      #graphite_api:
+        #install_method: 'pip'
+
+  - name: influxdb_with_pip_install
     run_list:
-      - recipe[graphite-api]
-    attributes:
-      graphite_api:
-        install_method: 'package'
-  - name: graphite_with_pip_install
-    run_list:
+      - recipe[influxdb]
       - recipe[graphite-api]
     attributes:
       graphite_api:
         install_method: 'pip'
+        whisper:
+            enabled: false
+        influxdb:
+            enabled: true

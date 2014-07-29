@@ -2,14 +2,21 @@ DEPENDENCIES
   graphite-api
     path: .
     metadata: true
+  influxdb
+    git: git@github.com:odolbeau/chef-influxdb.git
+    revision: c262db1f1bda7452d8a27e8f0680856912e80137
+    branch: feat-add-tests
 
 GRAPH
   apt (2.4.0)
   build-essential (2.0.4)
-  graphite-api (1.0.0)
+  chef_handler (1.1.6)
+  graphite-api (1.1.0)
     build-essential (>= 0.0.0)
     packagecloud (>= 0.0.0)
     python (>= 0.0.0)
+  influxdb (2.0.4)
+    chef_handler (>= 0.0.0)
   packagecloud (0.0.7)
     apt (>= 0.0.0)
   python (1.4.6)
