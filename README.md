@@ -32,3 +32,12 @@ Just include `graphite-api` in your node's `run_list`:
   ]
 }
 ```
+
+## Tests
+
+Install rubygems dependencies with `bundle install`.
+
+Then you can check the cookbook style with `rake style`.
+
+The default `rake` command also launch all kitchen tests. Take care, it can be
+long.
