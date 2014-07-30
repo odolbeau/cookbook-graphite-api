@@ -9,12 +9,12 @@
 # Description:       Deal with graphite-api
 ### END INIT INFO
 
-SCRIPT="/usr/local/bin/gunicorn graphite_api.app:app -b 0.0.0.0:8888"
-
-RUNAS=root
-
 PIDFILE=/var/run/graphite-api.pid
 LOGFILE=/var/log/graphite-api.log
+
+SCRIPT="/usr/local/bin/gunicorn graphite_api.app:app -b 0.0.0.0:8888 --access-logfile \"$LOGFILE\" --error-logfile \"$LOGFILE\""
+
+RUNAS=root
 
 start() {
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
