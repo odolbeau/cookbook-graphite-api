@@ -23,15 +23,3 @@ suites:
     attributes:
       graphite_api:
         install_method: 'pip'
-
-  - name: influxdb_with_pip_install
-    run_list:
-      - recipe[influxdb]
-      - recipe[graphite-api]
-    attributes:
-      graphite_api:
-        install_method: 'pip'
-        whisper:
-            enabled: false
-        influxdb:
-            enabled: true

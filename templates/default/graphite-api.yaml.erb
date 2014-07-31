@@ -18,12 +18,3 @@ whisper:
     - <%= directory %>
     <% end -%>
 <% end -%>
-
-<% if @node['graphite_api']['influxdb']['enabled'] == true -%>
-influxdb:
-  hots: <%= @node['graphite_api']['influxdb']['host'] %>
-  port: <%= @node['graphite_api']['influxdb']['port'] %>
-  user: <%= @node['graphite_api']['influxdb']['user'] %>
-  pass: <%= @node['graphite_api']['influxdb']['pass'] %>
-  db: <%= @node['graphite_api']['influxdb']['db'] %>
-<% end -%>
